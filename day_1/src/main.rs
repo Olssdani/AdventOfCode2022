@@ -1,4 +1,4 @@
-use std::{collections::HashMap, fs};
+use std::{collections::HashMap, error::Error, fs};
 
 fn main() {
     let contents = fs::read_to_string("day_1/input.txt").expect("Error reading file");
