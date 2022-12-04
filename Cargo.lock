@@ -27,6 +27,13 @@ name = "day_3"
 version = "0.1.0"
 
 [[package]]
+name = "day_4"
+version = "0.1.0"
+dependencies = [
+ "parse-display",
+]
+
+[[package]]
 name = "memchr"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
