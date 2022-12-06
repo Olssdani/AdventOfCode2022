@@ -4,24 +4,25 @@ fn run(input: &String) -> Result<(usize, i32), Box<dyn Error>> {
     let chars = input.chars().collect::<Vec<char>>();
 
     let mut res_index = 0;
-    let mut sucess_counter = 4;
+
     for (index, c) in chars.iter().enumerate() {
-        println!("{index} {res_index} {sucess_counter}");
-        let slice = &chars[(index + 1)..];
-        println!("{slice:?}");
-        if let Some(d) = slice.iter().position(|&r| r == *c) {
-            println!("d {d}");
-            if d < sucess_counter {
+        if index - res_index > 4 {
+            break;
+        }
+        println!("{index} {res_index} ");
+        let start = index + 1;
+        let slice = &chars[start..(start + 3)];
+        println!("Value {c} Slice{slice:?}");
+        if slice.contains(c) {
+            res_index = index + 1;
+            println!("Conatined");
+            /*if d < sucess_counter {
                 res_index = index;
 
                 continue;
             } else {
                 sucess_counter -= 1;
-            }
-        }
-
-        if sucess_counter == 0 {
-            break;
+            }*/
         }
     }
 
